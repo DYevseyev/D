@@ -16,3 +16,10 @@ Put your Google reCaptcha v2 keys
 
 == License ==
 This plugin is licensed under the GPL v2 (or later).
+
+== Additional Info ==
+In the settings you can access DreamCore reCaptcha-V2 for Comments configuration and add your site key.
+Current link to create reCaptcha is here
+https://www.google.com/recaptcha/admin/create
+
+Only supporting v2 at this time.
