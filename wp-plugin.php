@@ -1,19 +1,19 @@
 <?php
 /**
- * Plugin Name: DreamCore reCaptcha-v2 for Comments
- * Plugin URI: https://mrdreamer.com/DreamCore-ReCaptcha-v2-for-Comments
+ * Plugin Name: MrDreamer reCaptcha-v2 for Comments
+ * Plugin URI: https://mrdreamer.com/MrDreamer-ReCaptcha-v2-for-Comments
  * Description: Adds Google reCAPTCHA v2 to the comment form on your WordPress posts.
  * Version: 1.0.0
  * Author: Dmitriy Yevseyev
  * Author URI: https://mrdreamer.com
- * Text Domain: DreamCore-reCaptcha-v2-for-Comments
+ * Text Domain: mrdreamer
  * 
  * @package MrDreamer
  */
 
 // Enqueue the Google reCAPTCHA script
 function dreamcore_enqueue_recaptcha_script() {
-    wp_enqueue_script( 'google-recaptcha', 'https://www.google.com/recaptcha/api.js', array(), '1.0.0', true );
+    wp_enqueue_script( 'google-recaptcha', 'https://www.google.com/recaptcha/api.js', [], '1.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'dreamcore_enqueue_recaptcha_script' );
 
@@ -24,6 +24,14 @@ function dreamcore_add_recaptcha_to_comment_form() {
     wp_nonce_field( 'dreamcore_comment_form', 'dreamcore_comment_form_nonce' ); // Add nonce field
 }
 add_action( 'comment_form_after_fields', 'dreamcore_add_recaptcha_to_comment_form' );
+
+// Add the reCAPTCHA field for logged-in users as well
+function dreamcore_add_recaptcha_to_comment_form_logged_in() {
+    if ( is_user_logged_in() ) {
+        dreamcore_add_recaptcha_to_comment_form();
+    }
+}
+add_action( 'comment_form_logged_in_after', 'dreamcore_add_recaptcha_to_comment_form_logged_in' );
 
 // Verify the Google reCAPTCHA response and nonce on comment submission
 function dreamcore_verify_recaptcha_response( $commentdata ) {
@@ -39,12 +47,12 @@ function dreamcore_verify_recaptcha_response( $commentdata ) {
         wp_die( 'reCAPTCHA verification failed. Please try again.' );
     }
 
-    $args = array(
-        'body' => array(
+    $args = [
+        'body' => [
             'secret'   => $secret_key,
             'response' => $response,
-        ),
-    );
+        ],
+    ];
 
     $verify_response = wp_remote_post( 'https://www.google.com/recaptcha/api/siteverify', $args );
     $response_body = wp_remote_retrieve_body( $verify_response );
@@ -60,7 +68,7 @@ add_filter( 'preprocess_comment', 'dreamcore_verify_recaptcha_response' );
 
 // Add a settings page
 function dreamcore_add_settings_page() {
-    add_options_page( 'DreamCore reCaptchaV2 Settings', 'DreamCore reCaptchaV2', 'manage_options', 'mrdreamer-recaptcha-settings', 'dreamcore_render_settings_page' );
+    add_options_page( 'MrDreamer reCaptchaV2 Settings', 'MrDreamer reCaptchaV2', 'manage_options', 'mrdreamer-recaptcha-settings', 'dreamcore_render_settings_page' );
 }
 add_action( 'admin_menu', 'dreamcore_add_settings_page' );
 
