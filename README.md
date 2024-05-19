@@ -1,4 +1,4 @@
-=== DreamCore reCaptcha-V2 for Comments ===
+=== MrDreamer reCaptcha-V2 for Comments ===
 Contributors: Dmitriy Yevseyev
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -11,7 +11,7 @@ This plugin adds Google reCAPTCHA v2 verification to your comments section to im
 
 === Installation ===
 Upload & Activate Plugin
-Go Wordpress -> Settings -> DreamCore reCaptchaV2 
+Go Wordpress -> Settings -> MrDreamer reCaptchaV2 
 Put your Google reCaptcha v2 keys
 
 == License ==
@@ -21,4 +21,4 @@ This plugin is licensed under the GPL v2 (or later).
 Current link to create reCaptcha is here (as of 05/15/2024)
 https://www.google.com/recaptcha/admin/create
 
-Only supporting v2 at this time.
+This plugin only supports v2 at this time.
