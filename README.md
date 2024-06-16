@@ -1,8 +1,8 @@
 === MrDreamer reCaptcha-V2 for Comments ===
-Contributors: Dmitriy Yevseyev
+Contributors: Dmitriy Yevseyev and Nichitia Filimonov
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 
 Add Google reCAPTCHA v2 to the WordPress comment form to prevent spam.
 
