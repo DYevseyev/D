@@ -3,8 +3,8 @@
  * Plugin Name: MrDreamer reCaptcha-v2 for Comments
  * Plugin URI: https://mrdreamer.com/MrDreamer-ReCaptcha-v2-for-Comments
  * Description: Adds Google reCAPTCHA v2 to the comment form on your WordPress posts.
- * Version: 1.0.0
- * Author: Dmitriy Yevseyev
+ * Version: 1.0.1
+ * Author: Dmitriy Yevseyev and Nichitia Filimonov
  * Author URI: https://mrdreamer.com
  * Text Domain: mrdreamer
  * 
