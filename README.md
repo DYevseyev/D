@@ -1,9 +1,16 @@
 === MrDreamer reCaptcha-V2 for Comments ===
-Contributors: Dmitriy Yevseyev and Nichitia Filimonov
+Contributors: Dmitriy Yevseyev and Nichita Filimonov
+Tags: comments, recaptcha, spam
+Requires at least: 4.0
+Tested up to: 6.2
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Stable tag: 1.0.1
-
+External Service:
+This plugin uses Google reCAPTCHA v2 to provide spam protection on the comment forms.
+reCAPTCHA is a free service that protects your website from spam and abuse. 
+For more details, visit: https://www.google.com/recaptcha
+ 
 Add Google reCAPTCHA v2 to the WordPress comment form to prevent spam.
 
 == Description ==
